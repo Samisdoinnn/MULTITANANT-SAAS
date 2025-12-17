@@ -1,0 +1,16 @@
+{
+    "scripts": {
+        "dev": "npm run dev --workspaces --if-present",
+        "build": "npm run build --workspaces --if-present",
+        "setup": "npm install && npm run setup:db",
+        "setup:db": "cd apps/api && npx prisma generate && npx prisma migrate dev --name init",
+        "start:api": "cd apps/api && npm run dev",
+        "start:web": "cd apps/web && npm run dev",
+        "start:workers": "cd apps/workers && npm run dev"
+    },
+    "devDependencies": {
+        "@types/socket.io-client": "^1.4.36",
+        "nodemon": "^3.1.11",
+        "ts-node": "^10.9.2"
+    }
+}
